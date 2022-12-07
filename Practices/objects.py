@@ -15,6 +15,15 @@ class Client(object):
         """Verify the client object."""
         print("Client verified!")
 
+    def get_client_object(client):
+        """Get the client object.
+        Returns: Client: Client object.
+        """
+        if client:
+            return True
+        else:
+            return False
+
 def client_object(verify: Optional[bool] = True) -> Client:
     """Create a client object.
 
@@ -29,15 +38,10 @@ def client_object(verify: Optional[bool] = True) -> Client:
         client.verify()
     return client
 
-# write a method that calls the client_object function and returns the client object
-def get_client_object() -> Client:
-    """Get the client object.
-
-    Returns:
-        Client: Client object.
-    """
+def auth_client_object():
+    """Authenticate the client object."""
     client = client_object()
-    if client:
-        return True
+    if client.get_client_object():
+        print("Client authenticated!")
     else:
-        return False
+        print("Client not authenticated!")
